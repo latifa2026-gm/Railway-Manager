@@ -41,4 +41,32 @@ const trips = [
 
 const tickets = [];
 
-console.log("Données chargées avec succès.");
+//console.log("Données chargées avec succès.");
+function Menu_principal() {
+    console.log("");
+    console.log("=================================");
+    console.log("        RAILWAY MANAGER");
+    console.log("=================================");
+    console.log("");
+    console.log("1. Afficher les trajets");
+    console.log("2. Acheter un ticket");
+    console.log("3. Afficher les tickets");
+    console.log("4. Annuler un ticket");
+    console.log("5. Rechercher un ticket");
+    console.log("6. Filtrer les trajets");
+    console.log("7. Trier les trajets");
+    console.log("0. Quitter");
+    console.log("");
+}
+let choix;
+
+do {
+    Menu_principal();
+
+    choix = prompt("Votre choix : ");
+
+    console.log("Vous avez choisi : " + choix);
+
+} while (choix !== "0");
+
+console.log("Merci d'avoir utilisé Railway Manager !");
