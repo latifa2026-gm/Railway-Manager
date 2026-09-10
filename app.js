@@ -58,6 +58,22 @@ function Menu_principal() {
     console.log("0. Quitter");
     console.log("");
 }
+function Afficher_trajets(list_trajet) {
+    console.log("");
+    console.log("=== TRAJETS DISPONIBLES ===");
+    console.log("");
+
+    for (let i = 0; i < list_trajet.length; i++) {
+        let trajet = list_trajet[i];
+
+        console.log("#" + trajet.id + " " + trajet.departure + " → " + trajet.destination);
+        console.log("Départ : " + trajet.departureTime);
+        console.log("Arrivée : " + trajet.arrivalTime);
+        console.log("Prix : " + trajet.price + " DH");
+        console.log("Places disponibles : " + trajet.availableSeats);
+        console.log("");
+    }
+}
 let choix;
 
 do {
@@ -70,3 +86,15 @@ do {
 } while (choix !== "0");
 
 console.log("Merci d'avoir utilisé Railway Manager !");
+switch (choix) {
+    case "1":
+        Afficher_trajets(trips);
+        break;
+
+    case "0":
+        console.log("Merci d'avoir utilisé Railway Manager !");
+        break;
+
+    default:
+        console.log("Choix invalide.");
+}
