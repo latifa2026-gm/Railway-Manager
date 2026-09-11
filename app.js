@@ -229,8 +229,8 @@ do {
             Afficher_trajets(trips);
             break;
         case 2:
-            let Nom_passager_acheter_ticket = prompt("\nEntrer le nom de passager : ");
-            let Id_trajet = Number(prompt("\nEntrer id de trajet que tu as veux : "));
+            let Nom_passager_acheter_ticket = prompt("Entrer le nom de passager : ");
+            let Id_trajet = Number(prompt("Entrer id de trajet que tu as veux : "));
             Acheter_un_ticket(
                 trips,
                 tickets,
@@ -242,15 +242,15 @@ do {
             Afficher_tickets(tickets, trips);
             break;
         case 4 :
-            let id_ticket = Number(prompt("\nIdentifiant du ticket : "));
+            let id_ticket = Number(prompt("Identifiant du ticket : "));
             Annuler_un_ticket(tickets, trips, id_ticket);
             break;
         case 5 :
-            let Nom_passager = prompt("\nNom du passager :");
+            let Nom_passager = prompt("Nom du passager :");
             Rechercher_un_ticket(tickets, trips, Nom_passager);
             break;
         case 6:
-            let Ville_depart = prompt("\nVille de départ : ");
+            let Ville_depart = prompt("Ville de départ : ");
             Filtrer_trajets(trips, Ville_depart);
             break;
         case 7:
@@ -271,7 +271,7 @@ let resultat = Trajet_plus_vendu(tickets, trips);
 if (resultat === null) {
     console.log("Aucun trajet vendu.\n");
 } else {
-    console.log("Trajet le plus vendu :\n");
+    console.log("\nTrajet le plus vendu :\n");
     console.log(`${resultat[0].departure} -> ${resultat[0].destination}`);
     console.log(`${resultat[1]} tickets vendus`);
 }
