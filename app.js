@@ -205,3 +205,8 @@ function Trier_trajets(list_trajet) {
 }
 
 
+//10. Bonus — Statistiques
+
+function Nombre_totale_tickets_vendus(list_ticket) {
+    return list_ticket.length;
+}
