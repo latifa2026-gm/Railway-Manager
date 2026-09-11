@@ -1,7 +1,7 @@
 //Projet Fin SAS 1 YouCode — Gestion d'un train en console « Railway Manager »
 // Mes fonctions demandes pour la realisation du projett :
 //1. Menu principal
-function Afficher_menu() {
+function Afficher_menu(){
     console.log("=================================");
     console.log("         RAILWAY MANAGER         ");
     console.log("=================================");
@@ -55,7 +55,7 @@ function Acheter_un_ticket(listTrajet, tickets, Nom_passager, Id_trajet) {
     let trajet = findtrajet(listTrajet, Id_trajet);
     // Vérifier si le trajet existe
     if (trajet === null) {
-        console.log("Trajet introuvable.");
+        console.log("\nTrajet introuvable.\n");
         return;
     }
     // Vérifier les places disponibles
@@ -70,15 +70,16 @@ function Acheter_un_ticket(listTrajet, tickets, Nom_passager, Id_trajet) {
         };
         trajet.availableSeats--;
         tickets.push(ticket);
-        console.log("Ticket acheté avec succès.");
+        console.log("\nTicket acheté avec succès.\n");
+        console.log(find_tiket(tickets,ticket_id));
     } else {
-        console.log("Train complet.");
+        console.log("\nTrain complet.\n");
     }
 }
 //5. Afficher les tickets
 function Afficher_tickets(list_ticket, listTrajet) {
     if (list_ticket.length === 0) {
-        console.log("Aucun ticket enregistré.");
+        console.log("\nAucun ticket enregistré.\n");
         return;
     }
     console.log("\n=== TICKETS ===");
@@ -105,7 +106,7 @@ function find_tiket(list_ticket, id_ticket) {
 function Annuler_un_ticket(list_ticket, list_trajet, id_ticket,) {
     let ticket = find_tiket(list_ticket, id_ticket);
     if (ticket === null) {
-        console.log("Ticket introuvable.");
+        console.log("\nTicket introuvable.\n");
         return;
     }
     // retrouver le trajet associé
@@ -145,7 +146,7 @@ function Rechercher_un_ticket(list_ticket, list_trajet, Nom_passager) {
         }
     }
     if (!foundPassagerName)
-        console.log("Nom du passager introuvable.");
+        console.log("\nNom du passager introuvable.\n");
 }
 //8. Filtrer les trajets
 function Filtrer_trajets(list_trajet, Ville_depart) {
@@ -157,7 +158,7 @@ function Filtrer_trajets(list_trajet, Ville_depart) {
         }
     }
     if (!Ville_found) {
-        console.log("depart ville is not found !");
+        console.log("\ndepart ville is not found !\n");
     }
 }
 //9. Trier les trajets on applique un tri a bulle.
@@ -228,8 +229,8 @@ do {
             Afficher_trajets(trips);
             break;
         case 2:
-            let Nom_passager_acheter_ticket = prompt("Entrer le nom de passager : ");
-            let Id_trajet = Number(prompt("Entrer id de trajet que tu as veux : "));
+            let Nom_passager_acheter_ticket = prompt("\nEntrer le nom de passager : ");
+            let Id_trajet = Number(prompt("\nEntrer id de trajet que tu as veux : "));
             Acheter_un_ticket(
                 trips,
                 tickets,
@@ -241,22 +242,22 @@ do {
             Afficher_tickets(tickets, trips);
             break;
         case 4 :
-            let id_ticket = Number(prompt("Identifiant du ticket : "));
+            let id_ticket = Number(prompt("\nIdentifiant du ticket : "));
             Annuler_un_ticket(tickets, trips, id_ticket);
             break;
         case 5 :
-            let Nom_passager = prompt("Nom du passager :");
+            let Nom_passager = prompt("\nNom du passager :");
             Rechercher_un_ticket(tickets, trips, Nom_passager);
             break;
         case 6:
-            let Ville_depart = prompt("Ville de départ : ");
+            let Ville_depart = prompt("\nVille de départ : ");
             Filtrer_trajets(trips, Ville_depart);
             break;
         case 7:
             Afficher_trajets(Trier_trajets(trips));
             break;
         default:
-            console.log("\n\n Choix invalide ! ,faire une saisie correct .\n\n");
+            console.log("\nChoix invalide ! faire une saisie correct .\n");
     }
 
 } while (choix != 0);
@@ -268,7 +269,7 @@ console.log(`Chiffre d'affaires total : ${Chiffre_affaires_total(tickets)} DH`);
 let resultat = Trajet_plus_vendu(tickets, trips);
 
 if (resultat === null) {
-    console.log("Aucun trajet vendu.");
+    console.log("Aucun trajet vendu.\n");
 } else {
     console.log("Trajet le plus vendu :\n");
     console.log(`${resultat[0].departure} -> ${resultat[0].destination}`);
