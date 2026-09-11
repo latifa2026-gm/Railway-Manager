@@ -31,3 +31,12 @@ function Afficher_trajets(listTrajet) {
     }
 }
 
+//fonction pour trouver le trajet .
+function findtrajet(listTrajet, trajetid) {
+    for (let trajet of listTrajet) {
+        if (trajet.id === trajetid)
+            return trajet;
+    }
+
+    return null;
+}
