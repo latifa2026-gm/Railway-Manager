@@ -175,6 +175,20 @@ function Rechercher_un_ticket(list_ticket, list_trajet, Nom_passager) {
         console.log("Nom du passager introuvable.");
 }
 
+//8. Filtrer les trajets
+function Filtrer_trajets(list_trajet, Ville_depart) {
+    let Ville_found = false;
+    for (const trajet of list_trajet) {
+        if (cleanTexte(trajet.departure) === cleanTexte(Ville_depart)) {
+            Ville_found = true;
+            console.log(`${trajet.departure} -> ${trajet.destination} : ${trajet.price} DH `);
+        }
+    }
+    if (!Ville_found) {
+        console.log("depart ville is not found !");
+    }
+}
+
 //9. Trier les trajets on applique un tri a bulle.
 function Trier_trajets(list_trajet) {
     let list_trajet_sorted = [...list_trajet];
@@ -189,4 +203,5 @@ function Trier_trajets(list_trajet) {
     }
     return list_trajet_sorted;
 }
+
 
