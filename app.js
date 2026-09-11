@@ -40,3 +40,25 @@ function findtrajet(listTrajet, trajetid) {
 
     return null;
 }
+
+//fonction pour trouver le premier place vide !
+function trouver_Place_Libre_pour_Meme_trajet(list_ticket, trajetId) {
+    let place = 1;
+
+    while (true) {
+        let placeoccupee = false;
+
+        for (let ticket of list_ticket) {
+            if (ticket.tripId === trajetId && ticket.seatNumber === place) {
+                placeoccupee = true;
+                break;
+            }
+        }
+
+        if (!placeoccupee) {
+            return place;
+        }
+
+        place++;
+    }
+}
