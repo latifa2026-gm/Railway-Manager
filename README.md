@@ -48,4 +48,4 @@ L'application propose un menu interactif dans la console :
 7. Trier les trajets
 0. Quitter
 
-Votre choix :
+Votre choix :(saisie par l'utilisateur .)
