@@ -174,3 +174,19 @@ function Rechercher_un_ticket(list_ticket, list_trajet, Nom_passager) {
     if (!foundPassagerName)
         console.log("Nom du passager introuvable.");
 }
+
+//9. Trier les trajets on applique un tri a bulle.
+function Trier_trajets(list_trajet) {
+    let list_trajet_sorted = [...list_trajet];
+    for (let i = 0; i < list_trajet_sorted.length; i++) {
+        for (let j = 0; j < list_trajet_sorted.length - 1-i; j++) {
+            if (list_trajet_sorted[j].price > list_trajet_sorted[j + 1].price) {
+                let temp = list_trajet_sorted[j];
+                list_trajet_sorted[j] = list_trajet_sorted[j + 1];
+                list_trajet_sorted[j + 1] = temp;
+            }
+        }
+    }
+    return list_trajet_sorted;
+}
+
