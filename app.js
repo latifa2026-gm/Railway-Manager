@@ -123,3 +123,29 @@ function find_tiket(list_ticket, id_ticket) {
 
     return null;
 }
+
+//6. Annuler un ticket
+function Annuler_un_ticket(list_ticket, list_trajet, id_ticket,) {
+    let ticket = find_tiket(list_ticket, id_ticket);
+    if (ticket === null) {
+        console.log("Ticket introuvable.");
+        return;
+    }
+    // retrouver le trajet associé
+    let trajet = findtrajet(list_trajet, ticket.tripId);
+    trajet.availableSeats++;
+    // supprimer le ticket
+    let index = -1;
+
+    for (let i = 0; i < list_ticket.length; i++) {
+        if (list_ticket[i].id === id_ticket) {
+            index = i;
+            break;
+        }
+    }
+    //let index = list_ticket.findIndex(ticket => ticket.id === id_ticket);
+    list_ticket.splice(index, 1);
+    console.log("Ticket annulé avec succès.");
+}
+
+
