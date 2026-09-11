@@ -257,3 +257,14 @@ function Trajet_plus_vendu(list_ticket, list_trajet) {
 
     return infos;
 }
+
+
+//mon Programme principale :
+const prompt = require('prompt-sync')();
+//les donnees nécessaires à la réalisation du projet:
+const trips = require('./data.js');
+//console.log(trips);
+const tickets = [];
+let ticket_id = 0;
+let choix;
+
