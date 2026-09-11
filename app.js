@@ -222,3 +222,38 @@ function Chiffre_affaires_total(list_ticket) {
 
     return sum;
 }
+
+//fonction Trajet le plus vendu pour Compter le nombre de tickets correspondant à chaque tripId.
+
+function Trajet_plus_vendu(list_ticket, list_trajet) {
+
+    if (list_ticket.length === 0) {
+        return null;
+    }
+
+    let infos = [];
+    let max = 0, trajet_id = null;
+
+    for (let i = 0; i < list_trajet.length; i++) {
+
+        let tripid = list_trajet[i].id;
+        let count = 0;
+
+        for (let j = 0; j < list_ticket.length; j++) {
+            if (list_ticket[j].tripId === tripid) {
+                count++;
+            }
+        }
+
+        if (count > max) {
+            max = count;
+            trajet_id = tripid;
+        }
+    }
+
+    let max_trajet = findtrajet(list_trajet, trajet_id);
+
+    infos.push(max_trajet, max);
+
+    return infos;
+}
