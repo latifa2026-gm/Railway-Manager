@@ -149,3 +149,7 @@ function Annuler_un_ticket(list_ticket, list_trajet, id_ticket,) {
 }
 
 
+//fonction pour nettoyer un texte  afin de faire une vrai comparaison avec l'entrer du l'utilisateur.
+function cleanTexte(Name) {
+    return Name.trim().toLowerCase();
+}
