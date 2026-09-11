@@ -1,53 +1,12 @@
-const prompt = require("prompt-sync")();
+//Projet Fin SAS 1 YouCode — Gestion d'un train en console « Railway Manager »
 
-const trips = [
-    {
-        id: 1,
-        departure: "Safi",
-        destination: "Youssoufia",
-        departureTime: "08:00",
-        arrivalTime: "09:00",
-        price: 25,
-        availableSeats: 50
-    },
-    {
-        id: 2,
-        departure: "Youssoufia",
-        destination: "Ben Guerir",
-        departureTime: "09:30",
-        arrivalTime: "10:30",
-        price: 30,
-        availableSeats: 50
-    },
-    {
-        id: 3,
-        departure: "Safi",
-        destination: "Marrakech",
-        departureTime: "10:00",
-        arrivalTime: "12:00",
-        price: 90,
-        availableSeats: 50
-    },
-    {
-        id: 4,
-        departure: "Marrakech",
-        destination: "Casablanca",
-        departureTime: "13:00",
-        arrivalTime: "16:00",
-        price: 120,
-        availableSeats: 50
-    }
-];
+// Mes fonctions demandes pour la realisation du projett :
 
-const tickets = [];
-
-//console.log("Données chargées avec succès.");
-function Menu_principal() {
-    console.log("");
+//1. Menu principal
+function Afficher_menu() {
     console.log("=================================");
-    console.log("        RAILWAY MANAGER");
+    console.log("         RAILWAY MANAGER         ");
     console.log("=================================");
-    console.log("");
     console.log("1. Afficher les trajets");
     console.log("2. Acheter un ticket");
     console.log("3. Afficher les tickets");
@@ -56,45 +15,4 @@ function Menu_principal() {
     console.log("6. Filtrer les trajets");
     console.log("7. Trier les trajets");
     console.log("0. Quitter");
-    console.log("");
-}
-function Afficher_trajets(list_trajet) {
-    console.log("");
-    console.log("=== TRAJETS DISPONIBLES ===");
-    console.log("");
-
-    for (let i = 0; i < list_trajet.length; i++) {
-        let trajet = list_trajet[i];
-
-        console.log("#" + trajet.id + " " + trajet.departure + " → " + trajet.destination);
-        console.log("Départ : " + trajet.departureTime);
-        console.log("Arrivée : " + trajet.arrivalTime);
-        console.log("Prix : " + trajet.price + " DH");
-        console.log("Places disponibles : " + trajet.availableSeats);
-        console.log("");
-    }
-}
-let choix;
-
-do {
-    Menu_principal();
-
-    choix = prompt("Votre choix : ");
-
-    console.log("Vous avez choisi : " + choix);
-
-} while (choix !== "0");
-
-console.log("Merci d'avoir utilisé Railway Manager !");
-switch (choix) {
-    case "1":
-        Afficher_trajets(trips);
-        break;
-
-    case "0":
-        console.log("Merci d'avoir utilisé Railway Manager !");
-        break;
-
-    default:
-        console.log("Choix invalide.");
 }
