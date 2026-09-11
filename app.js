@@ -210,3 +210,15 @@ function Trier_trajets(list_trajet) {
 function Nombre_totale_tickets_vendus(list_ticket) {
     return list_ticket.length;
 }
+
+
+function Chiffre_affaires_total(list_ticket) {
+
+    let sum = 0;
+
+    for (let ticket of list_ticket) {
+        sum += ticket.price;
+    }
+
+    return sum;
+}
