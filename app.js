@@ -220,7 +220,7 @@ let ticket_id = 0;
 let choix;
 do {
     Afficher_menu();
-    choix =Numer(prompt("Votre choix :"));
+    choix =Number(prompt("Votre choix :"));
     switch (choix) {
         case 0 :
             console.log("Vous avez choisi de quitter le programme. À bientôt !");
