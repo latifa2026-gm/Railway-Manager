@@ -16,3 +16,18 @@ function Afficher_menu() {
     console.log("7. Trier les trajets");
     console.log("0. Quitter");
 }
+
+
+//3. Afficher les trajets
+function Afficher_trajets(listTrajet) {
+    console.log("=== TRAJETS DISPONIBLES ===");
+
+    for (let trajet of listTrajet) {
+        console.log(`\n#${trajet.id} ${trajet.departure} -> ${trajet.destination}`);
+        console.log(`Départ : ${trajet.departureTime}`);
+        console.log(`Arrivée: ${trajet.arrivalTime}`);
+        console.log(`Prix : ${trajet.price} DH`);
+        console.log(`Places disponibles : ${trajet.availableSeats}\n`);
+    }
+}
+
