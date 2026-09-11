@@ -93,3 +93,23 @@ function Acheter_un_ticket(listTrajet, tickets, Nom_passager, Id_trajet) {
         console.log("Train complet.");
     }
 }
+
+
+//5. Afficher les tickets
+function Afficher_tickets(list_ticket, listTrajet) {
+
+    if (list_ticket.length === 0) {
+        console.log("Aucun ticket enregistré.");
+        return;
+    }
+    console.log("\n=== TICKETS ===");
+    for (let ticket of list_ticket) {
+        let id_trip = ticket.tripId;
+        let trajet = findtrajet(listTrajet, id_trip);
+        console.log(`\nTicket #${ticket.id}`);
+        console.log(`Passager : ${ticket.passengerName}`);
+        console.log(`Trajet : ${trajet.departure} -> ${trajet.destination}`);
+        console.log(`Place : ${ticket.seatNumber}`);
+        console.log(`Prix : ${ticket.price} DH\n`);
+    }
+}
