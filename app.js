@@ -113,3 +113,13 @@ function Afficher_tickets(list_ticket, listTrajet) {
         console.log(`Prix : ${ticket.price} DH\n`);
     }
 }
+//fonction pour trouvet trajet .
+function find_tiket(list_ticket, id_ticket) {
+    for (const ticket of list_ticket) {
+        if (ticket.id === id_ticket) {
+            return ticket;
+        }
+    }
+
+    return null;
+}
