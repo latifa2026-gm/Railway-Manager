@@ -62,3 +62,34 @@ function trouver_Place_Libre_pour_Meme_trajet(list_ticket, trajetId) {
         place++;
     }
 }
+//4. Acheter un ticket
+function Acheter_un_ticket(listTrajet, tickets, Nom_passager, Id_trajet) {
+    let trajet = findtrajet(listTrajet, Id_trajet);
+
+    // Vérifier si le trajet existe
+    if (trajet === null) {
+        console.log("Trajet introuvable.");
+        return;
+    }
+
+    // Vérifier les places disponibles
+    if (trajet.availableSeats >= 1) {
+        let placelibre = trouver_Place_Libre_pour_Meme_trajet(tickets, Id_trajet);
+        let ticket = {
+            'id': ++ticket_id,
+            'passengerName': Nom_passager,
+            'tripId': trajet.id,
+            'seatNumber': placelibre,
+            'price': trajet.price
+        };
+
+        trajet.availableSeats--;
+
+        tickets.push(ticket);
+
+        console.log("Ticket acheté avec succès.");
+
+    } else {
+        console.log("Train complet.");
+    }
+}
