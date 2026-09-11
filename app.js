@@ -219,15 +219,15 @@ let ticket_id = 0;
 let choix;
 do {
     Afficher_menu();
-    choix = prompt("Votre choix :");
+    choix =Numer(prompt("Votre choix :"));
     switch (choix) {
-        case '0':
+        case 0 :
             console.log("Vous avez choisi de quitter le programme. À bientôt !");
             break;
-        case '1':
+        case 1 :
             Afficher_trajets(trips);
             break;
-        case '2':
+        case 2:
             let Nom_passager_acheter_ticket = prompt("Entrer le nom de passager : ");
             let Id_trajet = Number(prompt("Entrer id de trajet que tu as veux : "));
             Acheter_un_ticket(
@@ -237,22 +237,22 @@ do {
                 Id_trajet
             );
             break;
-        case '3':
+        case 3 :
             Afficher_tickets(tickets, trips);
             break;
-        case '4':
+        case 4 :
             let id_ticket = Number(prompt("Identifiant du ticket : "));
             Annuler_un_ticket(tickets, trips, id_ticket);
             break;
-        case '5':
+        case 5 :
             let Nom_passager = prompt("Nom du passager :");
             Rechercher_un_ticket(tickets, trips, Nom_passager);
             break;
-        case '6':
+        case 6:
             let Ville_depart = prompt("Ville de départ : ");
             Filtrer_trajets(trips, Ville_depart);
             break;
-        case '7':
+        case 7:
             Afficher_trajets(Trier_trajets(trips));
             break;
         default:
