@@ -319,4 +319,17 @@ do {
     }
 
 } while (choix != 0);
+//affichage du resultat de nombres du tikets vendu.
+console.log("Nombre total de tickets :", Nombre_totale_tickets_vendus(tickets));
+//affichage du resultat de la somme des prix des tickets vendu .
+console.log(`Chiffre d'affaires total : ${Chiffre_affaires_total(tickets)} DH`);
+//resultat du trajet plus vendu .
+let resultat = Trajet_plus_vendu(tickets, trips);
 
+if (resultat === null) {
+    console.log("Aucun trajet vendu.");
+} else {
+    console.log("Trajet le plus vendu :\n");
+    console.log(`${resultat[0].departure} -> ${resultat[0].destination}`);
+    console.log(`${resultat[1]} tickets vendus`);
+}
