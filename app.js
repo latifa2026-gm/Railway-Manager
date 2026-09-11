@@ -153,3 +153,24 @@ function Annuler_un_ticket(list_ticket, list_trajet, id_ticket,) {
 function cleanTexte(Name) {
     return Name.trim().toLowerCase();
 }
+
+//7. Rechercher un ticket
+function Rechercher_un_ticket(list_ticket, list_trajet, Nom_passager) {
+    let foundPassagerName = false;
+    for (const ticket of list_ticket) {
+        if (cleanTexte(ticket.passengerName) === cleanTexte(Nom_passager)) {
+            // doit afficher tous les tickets appartenant à Nom_passager
+            foundPassagerName = true;
+            let trajet = findtrajet(list_trajet, ticket.tripId);
+            console.log("\n  ==============================   ");
+            console.log(`Ticket #${ticket.id}`);
+            console.log(`Passager : ${ticket.passengerName}`);
+            console.log(`Trajet : ${trajet.departure} -> ${trajet.destination}`);
+            console.log(`Place :${ticket.seatNumber}`);
+            console.log(`Prix : ${ticket.price} DH`);
+            console.log("  ==============================   \n");
+        }
+    }
+    if (!foundPassagerName)
+        console.log("Nom du passager introuvable.");
+}
